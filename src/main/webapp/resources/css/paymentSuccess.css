@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+div#backbody {
+	font-size: 13pt;
+	max-width: 1200px;
+	width: 100%;
+	padding: 50px 0;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#frame1{
+	width: 100%;
+	margin: 0 atuo;
+	padding: 50px 50px;
+	background-color: #fff;
+}
+
+#frame2{
+	padding-bottom: 10px;
+}
+
+.home{
+	float: right;
+	font-size: 12pt;
+}
+
+table.calculation1 {
+	clear: both;
+	border: solid 1px #e0e0eb;
+	border-collapse:collapse;
+	background-color: white;
+	width: 100%;
+	font-size: 10pt;
+}
+table.calculation1 th {
+	border: solid 1px white;
+	border-top: solid 1px #e0e0eb;
+	padding: 10px 0;
+	text-align: center;
+	background-color: white;
+}
+
+table.calculation1 td {
+	border: solid 1px white;
+	border-bottom: solid 1px #e0e0eb;
+	text-align: center;
+	padding: 10px 0; 
+
+}
+
+table.calculation2 {
+	border: solid 1px #e0e0eb;
+	border-collapse:collapse;
+	background-color: #fafafa;
+	width: 100%;
+	font-size: 10pt;
+}
+
+table.calculation2 th {
+	border: solid 1px #fafafa;
+	text-align: center;
+}
+
+table.calculation2 td {
+	border: solid 1px white;
+	text-align: center;
+	border-bottom: solid 1px #fafafa;
+}
+
+.price{
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.lifont {
+	font-size: 10pt;
+	color: gray;
+}
+
+.delivery{
+	border: solid 1px #e0e0eb;
+	border-collapse:collapse;
+	width: 100%;
+	font-size: 12pt;
+}
+
+table.delivery{
+	clear: both;
+	border: solid 1px #e0e0eb;
+	border-collapse:collapse;
+	background-color: white;
+	width: 100%;
+	font-size: 10pt;
+}
+
+table.delivery th{
+	border: solid 1px white; 
+	border-top: solid 1px #e0e0eb;
+	padding: 12px 10px;
+	background-color: white;
+	text-align: left; 
+	padding-left: 10px; 
+	color: gray; 
+	padding-top: 30px; 
+	padding-bottom: 30px; 
+	border-bottom: solid 1px white;
+}
+
+table.delivery td{
+	border: solid 1px white;
+	padding: 12px 10px;
+
+}
+
+.deliverytd{
+	font-size: 10pt;
+	background-color: white;
+	border-bottom: solid 1px #e0e0eb;
+	color: black;
+	font-weight: bold;
+}
+
+.payArea{
+	height: 218px;
+	position: relative;
+	padding: 0 350px 0 0;
+	border: 1px solid #e0e0eb;
+	color: #353535;
+	line-height: 1.5;
+	border-right: white;
+	border-left: white;
+}
+
+.payment {
+	border-right: solid 1px #e0e0eb;
+	float: left;
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+	
+}
+
+.total{
+	float: right;
+	width: 350px;
+	height: 217px;
+	margin: 0 -350px 0 0;
+	text-align: left;
+	background: #fafafa;
+	font-size: 11pt;
+	padding: 0px 0px 0px 0px;
+	
+}
+
+.btn{
+	border: none;
+	color: white;
+	padding: 5px 13px;
+	margin-right: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: bolder;
+}
+
+.default{
+	background-color: #fff;
+	border: solid 1px #B7B8B9;
+	color: black;
+}
+
+.default:hover {
+	background: #ddd;
+}
+
+.backBtn{
+	background: #fff;
+	border: solid 1px gray;
+}
+
+.btnfloat{
+	float: left;
+}
+
+.btnfloat2{
+	float: right;
+}
+
+.clearboth{
+	clear: both;
+}
+
+.footerbtn{
+	margin-top: 30px;
+	float: right;
+	font-weight: bolder;
+	font-size: 12pt;
+	border-radius: 3px;
+	background-color: #B7B8B9;
+}
+
+input.underline {
+	border: 0;
+	border-bottom: solid 1px #e0e0eb;
+}
+
+.orBtn{
+	all:unset ;
+    border: black solid 1px !important;
+    width: 160px !important;
+    height: 40px !important;
+    position: relative;
+    display: inline-block;
+    border-radius: unset !important; 
+    font-size: 11pt;
+	font-weight:350;
+	text-align: center;
+	padding: 0 10px !important;
+	margin: 0 30px;
+	letter-spacing: 1px;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.buttonArea{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	margin-top:50px;
+}
+
+

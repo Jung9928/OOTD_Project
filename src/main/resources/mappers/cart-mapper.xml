@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart-mapper"> 
+	
+   <select id="selectCartList" parameterType="_int" resultType="Cart">
+   	SELECT C.*, P.PRODUCT_NAME, P.PRODUCT_PRICE, M.BRAND_NAME, P.PRODUCT_TYPE, LOWER(ATT_NAME) ATT_NAME
+	FROM CART C, PRODUCT P, MEMBER M, ATTACHMENT A
+	WHERE C.PRODUCT_NO = P.PRODUCT_NO
+    AND P.MEMBER_NO = M.MEMBER_NO
+    AND P.PRODUCT_NO = A.PRODUCT_NO
+    AND ATT_LEVEL = 1
+    AND C.CART_NO &lt; 10000
+    AND C.MEMBER_NO = ${member_no}
+    </select>
+    
+    <delete id="deleteCartProduct" parameterType="_int">
+	DELETE FROM CART WHERE CART_NO = ${cart_no}
+    </delete>
+    
+    <delete id="deleteCartProductAll" parameterType="_int">
+    DELETE FROM CART WHERE MEMBER_NO = ${member_no}
+    </delete>
+    
+    <update id="updateQuantity" parameterType="map">
+    	UPDATE CART SET CART_QUANTITY = ${quantity} WHERE CART_NO = ${cart_no}
+    </update>
+    
+    <select id="selectedCartList" parameterType="_int" resultType="Cart">
+   	   	SELECT C.*, P.PRODUCT_NAME, P.PRODUCT_PRICE, M.BRAND_NAME, LOWER(ATT_NAME) ATT_NAME
+		FROM CART C, PRODUCT P, MEMBER M, ATTACHMENT A
+		WHERE C.PRODUCT_NO = P.PRODUCT_NO
+	    AND P.MEMBER_NO = M.MEMBER_NO
+	    AND P.PRODUCT_NO = A.PRODUCT_NO
+	    AND ATT_LEVEL = 1
+	    AND C.CART_NO = ${cart_no}
+    </select>
+    
+    <insert id="addCartList" parameterType="Cart">
+    	INSERT INTO CART VALUES(SEQ_CART_NO.NEXTVAL, #{member_no}, #{cart_quantity}, #{cart_size}, #{product_no})
+    </insert>
+    
+    <insert id="addTempCartList" parameterType="Cart">
+	    	INSERT INTO CART VALUES(SEQ_CART_TEMP_NO.NEXTVAL, #{member_no}, #{cart_quantity}, #{cart_size}, #{product_no})
+    </insert>
+    
+    <select id="selectTempCartNo" resultType="_int">
+    	SELECT CART_NO FROM CART WHERE CART_NO = (SELECT MAX(CART_NO) FROM CART)
+    </select>
+
+</mapper>

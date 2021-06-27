@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productList-mapper"> 
+	
+	<select id="selectBrandProductList" resultType="Product_m">
+		SELECT *
+		FROM PRODUCT
+		WHERE PRODUCT_STATUS = 'Y'
+			AND PRODUCT_TYPE = 1
+			AND MEMBER_NO = #{ member_no }
+		ORDER BY PRODUCT_NO DESC
+	</select>
+	
+	<select id="brandProductSelectTotalContents" resultType="_int">
+		SELECT COUNT(*) 
+		FROM PRODUCT
+	</select>
+	
+	<update id="deleteBrandProductList" parameterType="_int">
+		UPDATE PRODUCT
+		SET PRODUCT_STATUS = 'N'
+		WHERE PRODUCT_NO = #{ product_no }
+	</update>
+	
+	<!-- 기원 시작 -->
+	<update id="deleteBrandProductAttachment" parameterType="_int">
+		UPDATE ATTACHMENT
+		SET ATT_STATUS = 'N'
+		WHERE PRODUCT_NO = #{ product_no }
+	</update>
+	
+	<update id="deleteSecondProductAttachment" parameterType="_int">
+		UPDATE ATTACHMENT
+		SET ATT_STATUS = 'N'
+		WHERE PRODUCT_NO = #{ product_no }
+	</update>
+	
+	<select id="selectAttachList" parameterType="_int" resultType="Attachment">
+		SELECT *
+		FROM ATTACHMENT
+		WHERE PRODUCT_NO = #{ product_no }
+	</select>
+	<!-- 기원 끝 -->
+
+	<select id="selectBrandProductRankList" resultType="Product_m">
+		SELECT P.MEMBER_NO, P.PRODUCT_NAME, P.PRODUCT_NO, P.PRODUCT_PRICE, RANK() OVER (ORDER BY OL.QUANTITY DESC) as RANK, NVL(OL.QUANTITY, 0) as QUANTITY, NVL(OL.QUANTITY*P.PRODUCT_PRICE, 0) as TOTAL 
+		FROM PRODUCT P, (SELECT PRODUCT_NO, SUM(ORDER_QUANTITY) as  QUANTITY 
+                            FROM O_ORDER_LIST
+                            GROUP BY PRODUCT_NO) OL
+		WHERE OL.PRODUCT_NO(+) = P.PRODUCT_NO
+   			AND P.MEMBER_NO = #{ member_no }
+   			AND PRODUCT_STATUS = 'Y' 
+   			AND QUANTITY > 0
+	</select>
+	
+	<!-- 건형 -->
+	<select id="selectProductList" resultType="Product_s">
+		SELECT *
+		FROM PRODUCT
+		WHERE PRODUCT_STATUS = 'Y'
+			AND PRODUCT_TYPE = 2
+			AND MEMBER_NO = #{member_no}
+		ORDER BY PRODUCT_NO DESC
+	</select>
+	
+	<update id="deleteProduct" parameterType="_int">
+		UPDATE PRODUCT
+		SET PRODUCT_STATUS = 'N'
+		WHERE PRODUCT_NO = #{product_no}
+	</update>
+	 
+	<select id="selectProductTotalContents" resultType="_int">
+		SELECT COUNT(*)
+		FROM PRODUCT
+	</select>
+
+</mapper>

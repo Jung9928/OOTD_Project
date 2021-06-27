@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+section{
+	height: auto;	
+	margin-bottom: 250px;
+}
+
+.product_detail{
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	width: 1300px;
+	height: 700px;
+}
+
+.review_list{
+	margin-bottom: 80px;
+}
+
+.imgInput{
+          /* border: rgb(165, 163, 163) solid; */
+          margin-top: 5px;
+    }
+    [id*=ImgArea]:hover {
+		cursor : pointer;
+    }
+    .inputBox{
+        display: inline-block;
+        margin: 1%;
+    }
+    .inputBox2{
+        margin: 1%;
+        float: left;
+    }
+    .inputBox1, .inputBox3 {
+        /* display: inline-block; */
+        margin: 1%;
+        float: left;
+    }
+    
+    .inputBox3{
+    	width : 370px;
+    }
+    
+    #imgDetail{
+        /* width: 545px;
+        height: 700px; */
+        margin-right: 20px;
+        /* transition: all 0.2s linear; */
+        /* overflow: hidden; */
+    }
+    /* #imgDetail:hover {
+        transform: scale(1.2);
+    } */
+    .ininput{
+        width: 340px;
+    }
+    .ininput2{
+        width: 120px;
+    }
+    .package{
+        display: inline;
+    }
+ .inputBox3 .btn{
+
+ 	border: black solid 0.5px;
+	width: 170px;
+	line-height: 25px;
+	position: relative;
+	display: inline-block;
+	border-radius: unset;
+	margin: 20px 5px;
+	font-size: 10pt;
+	
+     }
+.btnArea{
+	width: auto;
+	text-align:center;
+	margin: 40px auto;
+}
+
+.btn:hover{
+	    box-shadow: 2px 2px 5px gray;
+	    font-weight: 600;
+}
+
+     
+     
+     
+    .btn:hover, .dropArea:hoer, .underMenu:hover, {
+		cursor : pointer;
+    }
+    .drop:hover {
+    	cursor: pointer;
+    }
+    #selectSize{
+        margin-left: 90px;
+    }
+    #selectSize:hover {
+    	cursor: pointer;
+    }
+    .quantity:hover {
+    	cursor: pointer;
+    }
+    
+    .ddd{
+        display: none;
+    }
+    #pQuan{
+        margin: 10px;
+        width: 40px;
+        text-align: center;
+    }
+    .bi-dash-lg{
+        display: none;
+        
+    }
+    #pDelete:hover{
+        cursor: pointer;
+    }
+    .box{
+        display: block;
+    }
+    .review_list{
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+    }
+    .underMenu{
+        margin-left: 22%;
+        margin-right: 22%;
+        color: grey;
+        font-weight: bolder;
+        text-underline-offset: 2px;
+    }
+    /* styles unrelated to zoom */
+    * { border:0; margin:0; padding:0; }
+        /* p { position:absolute; top:3px; right:28px; color:#555; font:bold 13px/1 sans-serif;} */
+ 
+        /* these styles are for the demo, but are not required for the plugin */
+        .zoom {
+            display:inline-block;
+            position: relative;
+        }
+ 
+        
+        .zoom:after {
+            content:'';
+            display:block;
+            width:33px;
+            height:33px;
+            position:absolute;
+            top:0;
+            right:0;
+           
+        }
+ 
+        .zoom img {
+            display: block;
+        }
+        .zoom img::selection { background-color: transparent; }
+        
+        .zoomImg{
+            width: 800px;
+            height: 800px;
+        }
+
+.pagination_r {
+	display: inline-block;
+    text-align: center;
+    padding-left: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.pagination_r a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	background:none;
+	text-align:center;
+}
+
+
+.dropArea {
+    height: auto;
+    display: none;
+    margin-left: 50px;
+}
+
+
+#FAQ-table {
+	display: none;
+}
+
+.showArea {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.showArea-faq {
+	margin-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.dropArea > div {
+	background: #f5f5f5;
+	width: 700px;
+	height: auto;
+}
+
+.faq-text, .review-content {
+	padding-left: 20px;
+    display: inline-block;
+	margin-left: 20px;
+	padding-bottom: 20px;
+}
+
+.th {
+	display: inline-block;
+    width: 180px;
+    text-align: center;
+}
+
+.underMenu:hover, .showArea:hover, .showArea-faq:hover {
+	cursor: pointer;
+}
+
+.review {
+	text-decoration: underline;
+	color: grey;
+}
+
+html.dark .dropArea > div {
+	background: #bbb;
+	color: black;
+}
+
+a#currPage {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}

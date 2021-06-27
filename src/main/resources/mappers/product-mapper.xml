@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product-mapper">
+
+	<select id="brandSelectList" parameterType="Product_p" resultType="Product_p">
+		SELECT P.*, (SELECT COUNT(*)
+					 FROM ATTACHMENT
+					 WHERE PRODUCT_NO = P.PRODUCT_NO) FILECOUNT,
+			  M.BRAND_NAME, A.ATT_NAME
+		FROM PRODUCT P, MEMBER M, ATTACHMENT A
+		WHERE P.MEMBER_NO = M.MEMBER_NO
+           AND P.PRODUCT_NO = A.PRODUCT_NO
+		   AND PRODUCT_TYPE = 1
+           AND A.ATT_LEVEL = 1
+           AND PRODUCT_STATUS = 'Y'
+           <if test="product_category != 0">
+           		AND P.PRODUCT_CATEGORY = #{ product_category }
+           </if>
+           <if test="brand_name != 'All'">
+           		AND M.BRAND_NAME = #{ brand_name }
+           </if>
+           <if test="sortVal != null">
+           		<choose>
+           			<when test="sortVal == '최신순'">
+           				ORDER BY P.PRODUCT_NO DESC
+           			</when>
+           			<when test="sortVal == '낮은 가격순'">
+           				ORDER BY P.PRODUCT_PRICE
+           			</when>
+           			<otherwise>
+           				ORDER BY P.PRODUCT_PRICE DESC
+           			</otherwise>
+           		</choose>
+           </if>
+	</select>
+	
+	<select id="secondHandSelectList" parameterType="Product_p" resultType="Product_p">
+		SELECT P.*, (SELECT COUNT(*)
+					 FROM ATTACHMENT
+					 WHERE PRODUCT_NO = P.PRODUCT_NO) FILECOUNT,
+			  M.BRAND_NAME, A.ATT_NAME
+		FROM PRODUCT P, MEMBER M, ATTACHMENT A
+		WHERE P.MEMBER_NO = M.MEMBER_NO
+           AND P.PRODUCT_NO = A.PRODUCT_NO
+		   AND PRODUCT_TYPE = 2
+           AND A.ATT_LEVEL = 1
+           AND PRODUCT_STATUS = 'Y'
+           <if test="product_category != 0">
+           		AND P.PRODUCT_CATEGORY = #{ product_category }
+           </if>
+           <if test="sortVal != null">
+           		<choose>
+           			<when test="sortVal == '최신순'">
+           				ORDER BY P.PRODUCT_NO DESC
+           			</when>
+           			<when test="sortVal == '낮은 가격순'">
+           				ORDER BY P.PRODUCT_PRICE
+           			</when>
+           			<otherwise>
+           				ORDER BY P.PRODUCT_PRICE DESC
+           			</otherwise>
+           		</choose>
+           </if>
+	</select>
+	
+	<select id="brandSelectTotalContents" resultType="_int">
+		SELECT COUNT(*) FROM PRODUCT WHERE PRODUCT_TYPE = 1
+	</select>
+	
+	<select id="secondHandSelectTotalContents" resultType="_int">
+		SELECT COUNT(*) FROM PRODUCT WHERE PRODUCT_TYPE = 2
+	</select>
+	
+	<select id="brandNameSelectList" resultType="string">
+		SELECT BRAND_NAME FROM MEMBER WHERE BRAND_NAME != '중고'
+	</select>
+
+
+	<!-- 상품 등록 쿼리  -->
+	<insert id="insertSecondHandProduct" parameterType="Product_p">
+		INSERT INTO PRODUCT(PRODUCT_NO, PRODUCT_NAME, PRODUCT_DETAIL, PRODUCT_SIZEINFO, PRODUCT_SIZE, PRODUCT_PRICE, PRODUCT_STOCK_S, PRODUCT_STOCK_M, PRODUCT_STOCK_L, PRODUCT_TYPE, MEMBER_NO, PRODUCT_STATUS, PRODUCT_CATEGORY)
+		VALUES(SEQ_PRODUCT_NO.NEXTVAL, #{product_name}, #{product_detail}, #{product_sizeinfo}, #{product_size}, #{product_price}, #{product_stock_s}, #{product_stock_m}, #{product_stock_l}, #{product_type}, #{ member_no }, 'Y', #{ product_category })
+	</insert>
+
+	<insert id="insertBrandProduct" parameterType="Product_p">
+		INSERT INTO PRODUCT(PRODUCT_NO, PRODUCT_NAME, PRODUCT_DETAIL, PRODUCT_SIZEINFO, PRODUCT_SIZE, PRODUCT_PRICE, PRODUCT_STOCK_S, PRODUCT_STOCK_M, PRODUCT_STOCK_L, PRODUCT_TYPE, MEMBER_NO, PRODUCT_STATUS, PRODUCT_CATEGORY)
+		VALUES(SEQ_PRODUCT_NO.NEXTVAL, #{product_name}, #{product_detail}, #{product_sizeinfo}, #{product_size}, #{product_price}, #{product_stock_s}, #{product_stock_m}, #{product_stock_l}, #{product_type}, #{ member_no }, 'Y', #{ product_category })
+	</insert>
+
+	<insert id="insertAttachment" parameterType="Attachment">
+		<!-- selectKey -->
+		<!-- 다른 테이블의 정보를 외래키로 사용할 경우 참조하는 기능 -->
+		<selectKey keyProperty="product_no" resultType="_int" order="BEFORE">
+			SELECT SEQ_PRODUCT_NO.CURRVAL FROM DUAL
+		</selectKey>
+		<!-- att_no 부분도 시퀀스 넘버를 주자 -->
+		INSERT INTO ATTACHMENT(ATT_NO, ATT_NAME, ATT_DATE, ATT_LEVEL, ATT_STATUS, PRODUCT_NO)
+		VALUES(SEQ_ATT_NO.NEXTVAL, #{att_name}, default , #{att_level}, 'Y', #{product_no})
+	</insert>
+
+	<!-- 상품 수정 -->
+	<insert id="updateSecondHandProduct" parameterType="Attachment">
+		INSERT INTO PRODUCT(PRODUCT_NO, PRODUCT_NAME, PRODUCT_DETAIL, PRODUCT_SIZEINFO, PRODUCT_SIZE, PRODUCT_PRICE, PRODUCT_STOCK_S, PRODUCT_STOCK_M, PRODUCT_STOCK_L, PRODUCT_TYPE, MEMBER_NO, PRODUCT_STATUS, PRODUCT_CATEGORY)
+		VALUES(SEQ_PRODUCT_NO.NEXTVAL, #{product_name}, #{product_detail}, #{product_sizeinfo}, #{product_size}, #{product_price}, #{product_stock_s}, #{product_stock_m}, #{product_stock_l}, #{product_type}, #{ member_no }, 'Y', #{ product_category })
+	</insert>
+	
+	<update id="updateSecondHand" parameterType="Product_p">
+		UPDATE PRODUCT
+		SET PRODUCT_DETAIL = #{product_detail},
+			PRODUCT_SIZEINFO = #{product_sizeinfo},
+			PRODUCT_PRICE = #{product_price}
+		WHERE PRODUCT_NO = #{product_no}
+	</update>
+	
+	<delete id="deleteSecondHandProduct" parameterType="_int">
+		DELETE FROM ATTACHMENT
+		WHERE PRODUCT_NO = #{product_no}
+	</delete>
+
+	<!-- product Detail -->
+	<select id="brandSelectOne" parameterType="_int" resultType="Product_p">
+
+		SELECT P.* , M.BRAND_NAME
+		FROM PRODUCT P, MEMBER M 
+		WHERE P.MEMBER_NO = M.MEMBER_NO
+		  AND PRODUCT_NO = #{ product_no }
+	</select>
+
+	<select id="brandAttSelectList" parameterType="_int" resultType="Attachment">
+		SELECT * FROM 
+		ATTACHMENT 
+		WHERE PRODUCT_NO = #{ product_no }
+		  AND ATT_STATUS = 'Y'
+	</select>
+
+	<select id="secondSelectOne" parameterType="_int" resultType="Product_p">
+		SELECT * FROM PRODUCT WHERE PRODUCT_NO = #{ product_no }
+	</select>
+	
+	<select id="secondAttSelectList" parameterType="_int" resultType="Attachment">
+		SELECT * FROM 
+		ATTACHMENT 
+		WHERE PRODUCT_NO = #{ product_no }
+		  AND ATT_STATUS = 'Y'
+	</select>
+
+
+	<!-- 리뷰 -->
+	<select id="selectReviewList" parameterType="_int" resultType="review_v">
+		SELECT R.REVIEW_NO, R.REVIEW_TITLE, M.MEMBER_NICKNAME, R.REVIEW_DATE, R.REVIEW_CONTENTS
+		FROM REVIEW R, MEMBER M
+		WHERE R.MEMBER_NO = M.MEMBER_NO
+		AND PRODUCT_NO = ${ product_no }
+		ORDER BY REVIEW_NO DESC
+	</select>
+	
+	<select id="selectReviewTotalContents" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM REVIEW
+		WHERE PRODUCT_NO = ${ product_no }
+	</select>
+	
+	
+	<select id="selectProductImages" resultType="Attachment">
+		 SELECT A.PRODUCT_NO, RANK, ATT_NAME
+			FROM (SELECT *
+          		FROM 
+            ( SELECT O.PRODUCT_NO, SUM(ORDER_QUANTITY) as QUANTITY , DENSE_RANK() OVER (ORDER BY SUM(ORDER_QUANTITY) DESC) as RANK
+                FROM O_ORDER_LIST O, PRODUCT P
+                WHERE O.PRODUCT_NO = P.PRODUCT_NO
+                    AND P.PRODUCT_TYPE = 1
+                GROUP BY O.PRODUCT_NO
+            )
+           <![CDATA[WHERE ROWNUM <= 10]]>) OL, ATTACHMENT A
+			WHERE OL.PRODUCT_NO = A.PRODUCT_NO
+    			AND A.ATT_LEVEL = 1
+	</select>
+	
+	<!-- update -->
+	<update id="brandUpdate" parameterType="Product_p">
+		UPDATE PRODUCT 
+		 SET PRODUCT_DETAIL = #{product_detail},
+			PRODUCT_SIZEINFO = #{product_sizeinfo},
+			PRODUCT_PRICE = #{product_price},
+			PRODUCT_STOCK_S = #{product_stock_s},
+			PRODUCT_STOCK_M = #{product_stock_m},
+			PRODUCT_STOCK_L = #{product_stock_l}
+		WHERE PRODUCT_NO = #{product_no}
+	</update>
+
+	<update id="secondHandUpdate" parameterType="Product_p">
+		UPDATE PRODUCT 
+		SET PRODUCT_DETAIL = #{product_detail},
+			PRODUCT_SIZEINFO = #{product_sizeinfo},
+			PRODUCT_SIZE = #{product_size},
+			PRODUCT_PRICE = #{product_price}
+		WHERE PRODUCT_NO = #{product_no}
+	</update>
+	
+	<insert id="attachmentUpdate" parameterType="Attachment">
+		INSERT INTO ATTACHMENT(ATT_NO, ATT_NAME, ATT_DATE, ATT_LEVEL, ATT_STATUS, PRODUCT_NO)
+		VALUES(SEQ_ATT_NO.NEXTVAL, #{att_name}, default , #{att_level}, 'Y', #{product_no})
+	</insert>
+	
+	<delete id="deleteAttachment" parameterType="_int">
+		DELETE FROM ATTACHMENT
+		WHERE PRODUCT_NO = #{ product_no }
+	</delete>
+		
+	<select id="selectSearchResult" parameterType="string" resultType="Product_p">
+		SELECT P.*, M.BRAND_NAME, A.ATT_NAME
+		FROM PRODUCT P, MEMBER M, ATTACHMENT A
+		WHERE P.MEMBER_NO = M.MEMBER_NO
+           AND P.PRODUCT_NO = A.PRODUCT_NO
+           AND A.ATT_LEVEL = 1
+           AND PRODUCT_STATUS = 'Y'
+           AND (PRODUCT_NAME LIKE '%' || #{totalSearch} || '%' OR M.BRAND_NAME LIKE '%' || #{totalSearch} || '%')
+	</select>
+	
+	<select id="selectSearchTotalContents" parameterType="string" resultType="_int">
+		SELECT COUNT(*) 
+		FROM PRODUCT P, MEMBER M 
+		WHERE P.MEMBER_NO = M.MEMBER_NO 
+			AND (PRODUCT_NAME LIKE '%' || #{totalSearch} || '%' OR M.BRAND_NAME LIKE '%' || #{totalSearch} || '%')
+	</select>
+</mapper>

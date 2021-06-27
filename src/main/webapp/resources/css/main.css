@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+article{
+	position:relative;
+}
+
+#main_video {
+    position: relative;
+    
+}
+
+#main_video video{
+	width:100%;
+	}
+
+.video_content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+
+ }
+ 
+ body{
+    /* 스크롤 바로 인해 body 영역이 밀리지 않도록 함 */
+    overflow: overlay;
+}
+
+article > .video_content > .video_Brand {
+    width: 50%;
+  	height: 100%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    float:left;
+}
+
+article > .video_content > .video_SHand {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    float:left;
+}
+
+
+article > .video_content > .video_Brand > p {
+	vertical-align:middle;
+    text-align: center;
+    font-size: 40px;
+    color: #FFFFF0;
+    visibility: hidden;
+    padding-top: 50%;
+    padding-botton:50%;
+    
+}
+
+article > .video_content > .video_SHand > p {
+	vertical-align:middle;
+    text-align: center;
+    font-size: 40px;
+    color: #FFFFF0;
+    visibility: hidden;
+    padding-top: 50%;
+    padding-botton:50%;
+}
+
+article > .video_content > .video_Brand:hover {
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+article > .video_content > .video_SHand:hover {
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+}
+
+
+article > .video_content > .video_Brand:hover > p {
+    visibility: visible;
+}
+
+article > .video_content > .video_SHand:hover > p {
+    visibility: visible;
+}
+
+.product_slide {
+    width: 100%;
+    height: 500px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.slide_wrapper ul li {
+    list-style: none;
+    
+}
+
+.slide_wrapper {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bxslider li {
+    height: 360px;
+    background-color: #bbb;
+}
+
+.bxslider li img {
+	cursor: pointer !important;
+}
+
+
+.bxslider li:hover {
+	cursor: pointer;
+}
+
+

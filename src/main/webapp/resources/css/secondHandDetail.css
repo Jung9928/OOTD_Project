@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.imgInput{
+          /* border: rgb(165, 163, 163) solid; */
+          margin-top: 5px;
+    }
+    [id*=ImgArea]:hover {
+		cursor : pointer;
+    }
+    .inputBox{
+        display: inline-block;
+        margin: 1%;
+    }
+    .inputBox2{
+        margin: 1%;
+        float: left;
+    }
+    .inputBox1, .inputBox3 {
+        /* display: inline-block; */
+        margin: 1%;
+        float: left;
+    }
+    #imgDetail{
+        /* width: 545px;
+        height: 700px; */
+        margin-right: 20px;
+        /* transition: all 0.2s linear; */
+        /* overflow: hidden; */
+    }
+    /* #imgDetail:hover {
+        transform: scale(1.2);
+    } */
+    .ininput{
+        width: 340px;
+    }
+    .ininput2{
+        width: 120px;
+    }
+    .package{
+        display: inline;
+    }
+    #btn{
+        margin-left: 25px;
+        border-radius: 15%;
+        background-color: white;
+        width: 120px;
+        height: 40px;
+        font-weight: bolder;
+    }
+    #btn:hover {
+		cursor : pointer;
+    }
+    #selectSize{
+        margin-left: 90px;
+    }
+    .ddd{
+        display: none;
+    }
+    #pQuan{
+        margin: 10px;
+        width: 40px;
+        text-align: center;
+    }
+    .bi-dash-lg{
+        display: none;
+        
+    }
+    #pDelete:hover{
+        cursor: pointer;
+    }
+    .box{
+        display: block;
+    }
+    /* styles unrelated to zoom */
+    * { border:0; margin:0; padding:0; }
+        /* p { position:absolute; top:3px; right:28px; color:#555; font:bold 13px/1 sans-serif;} */
+ 
+        /* these styles are for the demo, but are not required for the plugin */
+        .zoom {
+            display:inline-block;
+            position: relative;
+        }
+ 
+        
+        .zoom:after {
+            content:'';
+            display:block;
+            width:33px;
+            height:33px;
+            position:absolute;
+            top:0;
+            right:0;
+           
+        }
+ 
+        .zoom img {
+            display: block;
+        }
+        .zoom img::selection { background-color: transparent; }
+        
+        .zoomImg{
+            width: 800px;
+            height: 800px;
+        }
+

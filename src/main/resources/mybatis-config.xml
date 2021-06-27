@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 마이바티스 DB 연결 시 설정할 내용을 작성 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+
+	<typeAliases>	
+		<typeAlias type="com.ootd.ootdApp.myPage.brand.model.vo.MypageOrderList" alias="MypageOrderList" />
+		<typeAlias type="com.ootd.ootdApp.member.model.vo.Member" alias="Member"></typeAlias>
+		<typeAlias type="com.ootd.ootdApp.common.MyTypeHandler" alias="MyTypeHandler"></typeAlias>
+		<typeAlias type="com.ootd.ootdApp.order.model.vo.Cart" alias="Cart" />
+		<typeAlias type="com.ootd.ootdApp.order.model.vo.Order" alias="Order" />
+		<typeAlias type="com.ootd.ootdApp.order.model.vo.BuyList" alias="BuyList" />
+		<typeAlias type="com.ootd.ootdApp.order.model.vo.OrderList" alias="OrderList" />
+		<typeAlias type="com.ootd.ootdApp.myPage.brand.model.vo.O_Order" alias="O_Order" />
+		<typeAlias type="com.ootd.ootdApp.myPage.brand.model.vo.O_Order_List" alias="O_Order_List" />
+		<typeAlias type="com.ootd.ootdApp.myPage.brand.model.vo.Product" alias="Product_m" />
+		<typeAlias type="com.ootd.ootdApp.product.model.vo.Product" alias="Product_p" />
+		<typeAlias type="com.ootd.ootdApp.product.model.vo.Attachment" alias="Attachment" />
+		<typeAlias type="com.ootd.ootdApp.product.model.vo.Review4view" alias="review_v" />
+		<typeAlias type="com.ootd.ootdApp.product.model.vo.Review" alias="review" />
+		<typeAlias type="com.ootd.ootdApp.myPage.senondHand.model.vo.Product" alias="Product_s"></typeAlias>
+		<typeAlias type="com.ootd.ootdApp.myPage.senondHand.model.vo.Review_ProductInfo" alias="Product_rev"></typeAlias>
+		<typeAlias type="com.ootd.ootdApp.myPage.brand.model.vo.O_Order_List" alias="O_Order_List" />
+	</typeAliases>
+	
+	<typeHandlers>
+		<package name="com.ootd.ootdApp.common"/>
+	</typeHandlers>
+	
+</configuration>

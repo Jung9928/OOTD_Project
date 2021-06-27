@@ -1,0 +1,411 @@
+@charset "UTF-8";
+
+div#backbody {
+   font-size: 13pt;
+   max-width: 1200px;
+   width: 100%;
+   padding: 50px 0;
+   margin-left: auto;
+    margin-right: auto;
+}
+
+#frame1{
+   width: 1200px;
+   margin: 40px auto;
+   padding: 50px 50px;
+   background-color: #fff;
+}
+
+#frame2{
+   padding-bottom: 10px;
+}
+
+.home{
+   float: right;
+   font-size: 12pt;
+}
+
+table.calculation1 {
+   clear: both;
+   border: solid 1px white;
+   border-collapse:collapse;
+   background-color: white;
+   width: 100%;
+   font-size: 10pt;
+}
+table.calculation1 th {
+   border: solid 1px white;
+   border-top: solid 1px #e0e0eb;
+   padding: 10px 0;
+   text-align: center;
+   background-color: white;
+}
+
+table.calculation1 td {
+   border: solid 1px white;
+   border-bottom: solid 1px #e0e0eb;
+   text-align: center;
+   padding: 10px 0; 
+
+}
+
+table.calculation2 {
+   border: solid 1px #e0e0eb;
+   border-collapse:collapse;
+   background-color: #fafafa;
+   width: 100%;
+   font-size: 10pt;
+}
+
+table.calculation2 th {
+   border: solid 1px #fafafa;
+   text-align: center;
+}
+
+table.calculation2 td {
+   border: solid 1px white;
+   text-align: center;
+   border-bottom: solid 1px #fafafa;
+}
+
+table.calculation1 thead:nth-child(3){
+	width:60%;
+}
+
+#pInfo{
+		 text-align: left;
+		 padding-inline-start:13px;
+		 width: 400px;
+}
+
+#tdImg{
+	width: 120px;
+}
+
+tbody tr{
+	height : 90px;
+}
+
+tbody img{
+	width:100px;
+}
+
+
+.price{
+   font-size: 20pt;
+   font-weight: bold;
+}
+
+.lifont {
+   font-size: 10pt;
+   color: gray;
+}
+
+.delivery{
+   border: solid 1px #e0e0eb;
+   border-collapse:collapse;
+   width: 100%;
+   font-size: 12pt;
+}
+
+table.delivery{
+   clear: both;
+   border: solid 1px #e0e0eb;
+   border-collapse:collapse;
+   background-color: white;
+   width: 100%;
+   font-size: 10pt;
+}
+
+table.delivery th{
+   border: solid 1px white; 
+   border-top: solid 1px #e0e0eb;
+   padding: 12px 10px;
+   background-color: white;
+   text-align: left; 
+   padding-left: 10px; 
+   color: gray; 
+   padding-top: 30px; 
+   padding-bottom: 30px; 
+   border-bottom: solid 1px white;
+}
+
+table.delivery td{
+   border: solid 1px white;
+   padding: 12px 10px;
+
+}
+
+.deliverytd{
+   font-size: 10pt;
+   background-color: white;
+   border-bottom: solid 1px #e0e0eb;
+   color: black;
+   font-weight: bold;
+}
+
+.payArea{
+   height: 100%;
+   position: relative;
+   border: 1px solid #e0e0eb;
+   color: #353535;
+   border-right: none;
+   border-left: none;
+   margin-top: 50px;
+   display:block;
+}
+
+
+
+.total{
+  
+   width: 40%;
+   height: 200px;
+   text-align: left;
+   background: #fafafa;
+   font-size: 11pt;
+   display:inline-block;
+   
+}
+
+.order .btn{
+   border: none;
+   color: white;
+   padding: 5px 13px;
+   margin-right: 10px;
+   cursor: pointer;
+   border-radius: 5px;
+   font-weight: bolder;
+}
+
+.default{
+   background-color: #fff !important;
+   border: solid 1px #B7B8B9 !important;
+   color: black;
+}
+
+.default:hover {
+   background: #ddd;
+}
+
+.backBtn{
+   background: #fff;
+   border: solid 1px gray;
+}
+
+.btnfloat{
+   float: left;
+}
+
+.btnfloat2{
+   float: right;
+}
+
+.postBtn{
+	cursor: pointer; 
+	margin-bottom: 10px; 
+	background-color: #fff; 
+	font-size: 13px; 
+	height: 29.5px;
+}
+
+.payBtn{
+	width: 95%; 
+	height: 40px; 
+	margin-top: 2px; 
+	margin-left: 9px; 
+	font-size: 15pt;
+}
+
+.clearboth{
+   clear: both;
+}
+
+input.underline {
+   border: 0;
+   border-bottom: solid 1px #e0e0eb;
+}
+
+.textarea{
+   display: none;
+   resize: none;
+   width: 452px;
+}
+
+.result{
+   display: inline-block; 
+   text-align:center; 
+   padding-top: 2px; 
+   padding-bottom: 2px; 
+   margin-left: -4px; 
+   margin-right: -4px; 
+   width: 30px;
+   border: unset;
+   background: none;
+   font-weight: 700;
+
+}
+
+.guideFrame{
+	border: solid 1px #e0e0eb; 
+	padding: 10px 0; 
+	font-size: 12px; 
+	background-color: #fafafa; 
+	padding-left: 10px;
+}
+
+.guideDetail{
+	margin-top:50px;
+	height: 230px;
+	border: solid 1px #e0e0eb; 
+	font-size: 12pt; 
+}
+
+.detailTitle{
+	background:#fafafa;
+	line-height:50px;
+	padding-left : 20px;
+	border-bottom:solid 1px #e0e0eb;
+	font-size:13px;
+	font-weight: bold;
+
+}
+.detailTitle p{
+	margin:unset;
+}
+
+.detailContent{
+	height:120px;
+	padding-left: 20px;
+	padding-top:10px;
+
+}
+
+.detailContent li{
+	line-height:30px;
+		font-size:12px;
+}
+
+
+.price1.parent{
+	   font-weight: 700;
+}
+
+.delivery input{
+	height: 30px;
+	padding-inline-start: 2px;
+	outline: none;
+}
+
+.postSearch{
+	margin-left:10px;
+	line-height: 15px !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	background: black !important;
+	color:white !important;
+	border-radius: unset !important;
+}
+
+#emailChoice{
+	height: 28px;
+	outline: none;
+	}
+	
+.textarea{
+	margin-top: 10px;
+	outline : none;	
+	padding-inline-start: 5px;
+}
+.recipient{
+	width: 100px;
+}
+
+.paymentSelect{
+	height: 200px;
+	font-size: 11pt;  
+	font-weight: normal;
+	width:60%;
+	display:inline-block;
+	float:left;
+}
+
+.paymentSelect>p{
+	margin-bottom:unset !important;
+	padding-top:10px;
+	padding-left:10px;
+	padding-bottom: 10px;
+	font-size: 10pt;
+	font-weight: bold;
+	color: gray;
+	
+}
+
+.paymentIcon, .paymentRadio{
+	text-align:center;
+}
+
+.paymentIcon img{
+	width:80px;
+	height:80px;
+	margin:10px 25px;
+}
+
+.paymentRadio input{
+	margin-left:40px;
+	margin-right:5px;
+}
+
+#card{
+	margin-left:10px;
+	}
+
+#samsung{
+	margin-left:60px;
+	
+}
+
+#phone{
+	margin-left:60px;
+}
+
+
+.total p{
+	margin-bottom:unset !important;
+	padding-top:10px;
+	padding-left:10px;
+	padding-bottom: 10px;
+	font-size: 10pt;
+	font-weight: bold;
+	color: gray;
+}
+
+.finalPriceArea{
+	position:relative;
+	padding:0 20px;
+	line-height:40px;
+	margin-top:45px;
+	margin-bottom:20px;
+	
+	
+}
+
+.finalPriceArea >span{
+
+	font-size: 15px;
+
+}
+
+.fpa-price,
+.won{
+	float:right;
+}
+
+.fpa-price{
+	font-size:30px !important;
+	font-weight: bolder;
+}
+
+.btnArea{
+	height:40px;
+}

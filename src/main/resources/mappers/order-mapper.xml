@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="order-mapper"> 
+
+    <insert id="insertOrder" parameterType="Order">
+    	 INSERT INTO O_ORDER VALUES(SEQ_ORDER_NO.NEXTVAL, #{receiver_name}, #{order_address}, DEFAULT, #{order_memo}, #{total_price}, #{member_no})
+    </insert>
+    
+    <insert id="insertOrderList" parameterType="OrderList">
+    	INSERT INTO O_ORDER_LIST VALUES(#{order_size}, #{order_quantity},SEQ_ORDER_NO.CURRVAL ,#{product_no}, DEFAULT)
+    </insert>
+    
+    <insert id="insertPurchase" parameterType="_int">
+    	INSERT INTO PURCHASE VALUES(SEQ_ORDER_NO.CURRVAL, DEFAULT, #{member_no})
+    </insert>
+    
+    <insert id="insertSaleList" parameterType="_int">
+    	INSERT INTO SALE_LIST VALUES(SEQ_ORDER_NO.CURRVAL, DEFAULT, #{member_no})
+    </insert>
+    
+    <select id="selectOrderList" resultType="Order">
+    	SELECT *
+		FROM O_ORDER
+		WHERE ORDER_NO = (SELECT MAX(ORDER_NO) FROM O_ORDER)
+    </select>
+    
+</mapper>

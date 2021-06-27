@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member-mapper">
+
+	<!-- java 필드변수와 DB 변수 매칭시켜주기 (타입 , 변수이름) -->
+	<resultMap type="Member" id="resultMember">
+		<result property="member_id" column="member_id"/>
+		<result property="member_nickname" column="member_nickname"/>
+		<result property="member_pw" column="member_pw"/>
+		<result property="member_name" column="member_name"/>
+		<result property="address" column="address" typeHandler="MyTypeHandler"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="enroll_date" column="enroll_date"/>
+		<result property="brand_name" column="brand_name"/>
+		<result property="account_number" column="account_number"/>
+		<result property="login_type" column="login_type"/>
+		<result property="bank_code" column="bank_code"/>
+	</resultMap>
+
+	<!-- 현진 시작 -->
+	<insert id="insertBrandMember" parameterType="Member">
+		INSERT INTO MEMBER VALUES (
+			SEQ_MEMBER_NO.NEXTVAL, #{ member_id }, #{ member_nickname }, #{ member_pw },
+			NULL, #{ email }, #{ phone }, #{ address, typeHandler=MyTypeHandler }, 
+			SYSDATE, #{ brand_name }, #{ account_number }, 1, #{ bank_code }
+		)
+	</insert>
+	
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER VALUES (
+			SEQ_MEMBER_NO.NEXTVAL, #{ member_id }, #{ member_nickname }, #{ member_pw },
+			#{ member_name }, #{ email }, #{ phone }, #{ address, typeHandler=MyTypeHandler }, 
+			SYSDATE, DEFAULT, #{ account_number }, 2, #{ bank_code }
+		)
+	</insert>
+
+	<select id="selectOneMember" parameterType="string" resultMap="resultMember" >
+		SELECT * FROM MEMBER
+		WHERE MEMBER_ID = #{ member_id }
+	</select>
+
+	<select id="selectMemberId" parameterType="Member" resultMap="resultMember">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_NAME = #{ member_name }
+		AND EMAIL = #{ email }
+		AND LOGIN_TYPE = #{ login_type }
+	</select>
+	
+	<select id="selectBrandId" parameterType="Member" resultMap="resultMember">
+		SELECT * FROM MEMBER
+		WHERE BRAND_NAME = #{ brand_name }
+		AND EMAIL = #{ email }
+		AND LOGIN_TYPE = #{ login_type }
+	</select>
+	
+	<update id="updatePasswordFind" parameterType="Member">
+		UPDATE MEMBER SET MEMBER_PW = #{member_pw}
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	
+	<select id="selectEmailCheck" parameterType="string" resultType="string">
+		SELECT MEMBER_ID FROM MEMBER
+		WHERE EMAIL = #{ email }
+	</select>
+	
+	<!-- 현진 끝 -->
+	
+	
+	<!-- 다인 시작 -->
+
+	<update id="updateBrandPwd" parameterType="Member">
+		UPDATE MEMBER SET MEMBER_PW = #{ member_pw }
+		WHERE MEMBER_NO = #{ member_no } 
+	</update>
+	
+	<update id="updateBrandEmail" parameterType="Member">
+		UPDATE MEMBER SET EMAIL = #{ email }
+		WHERE MEMBER_NO = #{ member_no } 
+	</update>
+	
+	<update id="updateBrandPhone" parameterType="Member">
+		UPDATE MEMBER SET PHONE = #{ phone }
+		WHERE MEMBER_NO = #{ member_no } 
+	</update>
+	
+	<update id="updateBrandAccount" parameterType="Member">
+		UPDATE MEMBER SET ACCOUNT_NUMBER = #{ account_number }
+		WHERE MEMBER_NO = #{ member_no } 
+	</update>
+	
+	<!-- 다인 끝 -->
+	
+	
+	
+	
+	<!-- 건형 시작 -->
+	<!-- 회원정보 수정 -->
+	<update id="updatePassword" parameterType="Member">
+		UPDATE MEMBER SET MEMBER_PW = #{member_pw}
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	
+	
+	<update id="updateEmail" parameterType="Member">
+		UPDATE MEMBER SET EMAIL = #{email}
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	
+	<update id="updatePhone" parameterType="Member">
+		UPDATE MEMBER SET PHONE = #{phone}
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	
+	<update id="updateBank" parameterType="Member">
+		UPDATE MEMBER SET BANK_CODE = #{bank_code}, ACCOUNT_NUMBER = #{account_number}
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	
+	<update id="updateAddress" parameterType="Member">
+		UPDATE MEMBER SET ADDRESS = #{address, typeHandler=MyTypeHandler} 
+		WHERE MEMBER_ID = #{member_id}
+	</update>
+	<!-- 건형 -->
+
+	<!-- 아이디 중복 체크 -->
+	<select id="checkIdDuplicate" parameterType="string" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_ID = #{member_id}
+	</select>
+	
+</mapper>

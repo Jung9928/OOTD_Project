@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderList-mapper"> 
+
+   <select id="selectBrandOrderList" resultType="O_Order" parameterType="string">
+	SELECT P.PRODUCT_NAME, OL.ORDER_QUANTITY, O.ORDER_NO, O.ORDER_DATE, (OL.ORDER_QUANTITY*P.PRODUCT_PRICE) AS TOTAL_PRICE, OL.ORDER_STATUS, P.PRODUCT_NO
+        FROM O_ORDER O, O_ORDER_LIST OL, PRODUCT P, MEMBER M
+        WHERE O.ORDER_NO = OL.ORDER_NO
+        	AND OL.PRODUCT_NO = P.PRODUCT_NO
+        	AND P.MEMBER_NO = M.MEMBER_NO
+        	AND P.PRODUCT_TYPE = 1
+        	AND M.BRAND_NAME= #{ brand_name }
+        ORDER BY O.ORDER_DATE DESC
+   </select>
+   
+   <select id="selectBrandTotalContents" resultType="_int">
+		SELECT COUNT(*) 
+		FROM O_ORDER O, O_ORDER_LIST OL
+		WHERE O.ORDER_NO = OL.ORDER_NO
+	</select>
+
+   <select id="selectBrandOrderDetail" resultType="O_Order" parameterType="O_Order">
+   		SELECT A.ORDER_NO, A.MEMBER_NO, C.PRODUCT_NAME, A.ORDER_ADDRESS, A.RECEIVER_NAME, A.ORDER_DATE, B.ORDER_QUANTITY, (B.ORDER_QUANTITY*C.PRODUCT_PRICE) AS TOTAL_PRICE
+   		FROM O_ORDER A, O_ORDER_LIST B, PRODUCT C
+   		WHERE A.ORDER_NO = B.ORDER_NO
+        	AND B.PRODUCT_NO = C.PRODUCT_NO AND 
+   		A.ORDER_NO = #{ order_no } AND C.PRODUCT_NO = #{ product_no }
+   </select>
+   
+   <update id="updateBrandStatus" parameterType="_int">
+   		UPDATE O_ORDER_LIST
+   		SET ORDER_STATUS = 2
+		WHERE ORDER_NO = #{ order_no } AND PRODUCT_NO = #{ product_no }
+   </update>
+   
+   <update id="updateNoBrandStatus" parameterType="_int">
+   		UPDATE PURCHASE
+   		SET PURCHASE_STATUS = 2
+		WHERE ORDER_NO = #{ order_no }
+   </update>
+
+	<select id="selectOrderList" parameterType="string" resultType="O_Order">
+		<!-- SELECT M.BRAND_NAME, P.PRODUCT_NO, P.PRODUCT_NAME, OL.ORDER_SIZE AS PRODUCT_SIZE, O.ORDER_NO, O.ORDER_DATE, (OL.ORDER_QUANTITY*P.PRODUCT_PRICE) AS TOTAL_PRICE, OL.ORDER_STATUS 
+		FROM O_ORDER O, O_ORDER_LIST OL, MEMBER M, PRODUCT P , (SELECT BRAND_NAME, PRODUCT_NO
+																FROM MEMBER, PRODUCT, O_ORDER, O_ORDER_LIST
+																WHERE PROCUT_NO = O_ORDER_LIST.PROCUT_NO
+																	AND PRODUCT.MEMBER_NO = MEMBER_NO
+																	AND )
+		WHERE O.ORDER_NO = OL.ORDER_NO 
+			AND OL.PRODUCT_NO = P.PRODUCT_NO 
+			AND O.MEMBER_NO = M.MEMBER_NO 
+			AND M.MEMBER_NAME= #{ member_name }
+		ORDER BY O.ORDER_DATE DESC
+		 -->
+		SELECT M.BRAND_NAME, S.*
+		FROM MEMBER M, PRODUCT P,  (SELECT P.PRODUCT_NO, P.PRODUCT_NAME, OL.ORDER_SIZE AS PRODUCT_SIZE, O.ORDER_NO, O.ORDER_DATE, (OL.ORDER_QUANTITY*P.PRODUCT_PRICE) AS TOTAL_PRICE, OL.ORDER_STATUS
+		                            FROM O_ORDER O, O_ORDER_LIST OL, PRODUCT P, MEMBER M 
+		                            WHERE O.ORDER_NO = OL.ORDER_NO AND OL.PRODUCT_NO = P.PRODUCT_NO AND O.MEMBER_NO = M.MEMBER_NO 
+		                            AND M.MEMBER_NAME= #{member_name}
+		                            ORDER BY O.ORDER_DATE DESC) S
+		WHERE M.MEMBER_NO = P.MEMBER_NO
+		AND P.PRODUCT_NO = S.PRODUCT_NO
+	</select>
+	
+	<select id="selectOrderDetail" parameterType="string" resultType="_int">
+		SELECT O.RECEIVER_NAME, O.ORDER_ADDRESS, M.MEMBER_PHONE
+		FROM O_ORDER O, O_ORDER_LIST OL, PRODUCT P, MEMBER M
+		WHERE O.ORDER_NO = OL.ORDER_NO
+			AND OL.PRODUCT_NO = P.PRODUCT_NO
+			AND O.ORDER_NO = M.MEMBER_NO
+			AND O.ORDER_NO = #{order_no}
+	</select>
+	
+	<select id="selectSaleProductList" parameterType="string" resultType="O_Order">
+		SELECT M.BRAND_NAME, P.PRODUCT_NAME, P.PRODUCT_SIZE, O.ORDER_NO, O.ORDER_DATE, O.TOTAL_PRICE, OL.ORDER_STATUS
+		FROM MEMBER M, PRODUCT P, O_ORDER O, O_ORDER_LIST OL
+		WHERE M.MEMBER_NO = P.MEMBER_NO 
+			AND O.ORDER_NO = OL.ORDER_NO
+			AND OL.PRODUCT_NO = P.PRODUCT_NO
+			AND M.MEMBER_NAME = #{member_name}
+		ORDER BY O.ORDER_DATE ASC
+		
+		
+	</select>
+	
+	<update id="updateOrderSaleStatus" parameterType="_int">
+		UPDATE O_ORDER_LIST
+		SET ORDER_STATUS = 2
+		WHERE ORDER_NO = #{order_no}
+	</update>
+	
+	<update id="updateOrderStatus" parameterType="_int">
+		UPDATE PURCHASE
+		SET PURCHASE_STATUS = 2
+		WHERE ORDER_NO = #{order_no}
+	</update>
+	
+	<select id="selectOrderStatus" parameterType="string" resultType="O_Order_List">
+		SELECT ORDER_STATUS
+		FROM O_ORDER_LIST
+		WHERE ORDER_NO = #{order_no}
+	</select>
+	
+	<select id="selectReviewInfo" parameterType="hashmap" resultType="Product_rev">
+		SELECT  K.PRODUCT_NO, A.ATT_NAME, M.BRAND_NAME, K.PRODUCT_NAME, K.ORDER_SIZE, K.ORDER_DATE, K.TOTAL_PRICE
+		FROM ATTACHMENT A, MEMBER M, ( SELECT L.PRODUCT_NO, P.PRODUCT_NAME, L.ORDER_SIZE, (L.ORDER_QUANTITY * P.PRODUCT_PRICE) AS TOTAL_PRICE, O.ORDER_DATE, P.MEMBER_NO
+                                       FROM PRODUCT P, O_ORDER O, O_ORDER_LIST L
+                                       WHERE L.PRODUCT_NO = #{ product_no }
+                                       AND O.MEMBER_NO = #{ member_no }
+                                       AND O.ORDER_NO = L.ORDER_NO
+                                       AND P.PRODUCT_NO = L.PRODUCT_NO ) K
+		WHERE A.PRODUCT_NO = K.PRODUCT_NO
+		AND M.MEMBER_NO = K.MEMBER_NO 
+		AND ROWNUM = 1
+	</select>
+	
+	<insert id="insertReview" parameterType="review">
+		INSERT INTO REVIEW VALUES(SEQ_REVIEW_NO.NEXTVAL, #{ review_contents }, SYSDATE, #{ review_title }, #{ member_no }, #{ product_no }, #{order_no})
+	</insert>
+	
+	<update id="updatePurchaseStatus" parameterType="_int">
+		UPDATE O_ORDER_LIST
+		SET ORDER_STATUS = 3
+		WHERE ORDER_NO = #{order_no}
+	</update>
+	
+	<update id="updatefianlstatus" parameterType="_int">
+		UPDATE PURCHASE
+		SET PURCHASE_STATUS = 3
+		WHERE ORDER_NO = #{order_no}
+	</update>
+	
+	<select id="purchaseSelectTotalContents" resultType="_int">
+		SELECT COUNT(*)
+		FROM O_ORDER O, O_ORDER_LIST OL
+		WHERE O.ORDER_NO = OL.ORDER_NO
+	</select>
+	
+	<select id="selectSaleProductTotalContents" resultType="_int">
+		SELECT COUNT(*)
+		FROM O_ORDER O, O_ORDER_LIST OL, PRODUCT P
+		WHERE O.ORDER_NO = OL.ORDER_NO
+			AND OL.PRODUCT_NO = P.PRODUCT_NO
+	</select>
+	
+</mapper>

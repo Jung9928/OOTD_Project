@@ -1,0 +1,392 @@
+/* 전체 기본 설정 */
+
+body{
+    /* 스크롤 바로 인해 body 영역이 밀리지 않도록 함 */
+    overflow: overlay;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+.category li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+
+br{
+    size: unset;
+    height: 5px;
+}
+
+td,
+.main th {
+    padding: unset;
+    font-weight: unset;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+html.dark a {
+	color: grey !important;
+}
+
+
+.container-myPage {
+    width: 1200px;
+    margin: 70px auto 200px auto;
+
+}
+
+/* 좌측 메뉴 설정 */
+.category-list {
+    float: left;
+    width: 150px;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.category-list ul{
+	margin-block-start : 1em;
+	margin-block-end: 1em;
+    font-size: 13px;
+}
+
+.category-list ul a {
+	background:none;
+	text-decoration: none;
+}
+
+/* 테이블 전체 메뉴 설정 */
+table {
+    border-collapse: collapse;
+    font-size: 13px;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+}
+
+.menu-title {
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline 2px;
+    text-underline-offset: 5px;
+}
+
+.body-title{
+    text-align: center;
+    margin: 30px 0 30px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 테이블 나오는 영역 */
+.table-title{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 11px;
+    
+}
+
+
+thead>tr{
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 13px;
+}
+thead tr>:first-child{
+    width: 280px;
+}
+
+thead tr>:nth-child(2){
+    width: 100px;
+}
+
+thead tr>:nth-child(3){
+    width: 100px;
+}
+
+thead tr>:nth-child(4){
+    width: 100px;
+}
+thead tr>:nth-child(5){
+    width: 100px;
+}
+
+thead tr>:last-child{
+    width: 140px;
+}
+
+tbody>tr{
+    border-bottom: lightgray solid 0.25px;
+    height: 60px;
+}
+
+
+tbody>tr:first-child{
+    text-align: left;
+}
+
+button {
+    background: black;
+    border: black solid 0.5px;
+    width: 120px;
+    height: 35px;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+tbody td:first-child{
+    text-align: left;
+    padding-inline-start: 10px;
+}
+
+.modify-product{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.delete-product{
+    margin-bottom: 10px;
+    background-color:lightgray;
+    color: black;
+    border: unset;
+}
+
+.product-list tr>:first-child{
+    width: 300px;
+    text-align: center;
+    padding-inline-start: unset;
+}
+.product-list tr>:nth-child(2){
+    width: 150px;
+}
+.product-list tr>:nth-child(3){
+    width: 150px;
+}
+.product-list tr>:nth-child(4){
+    width: 150px;
+}
+.product-list tr>:nth-child(5){
+    width: 200px;
+}
+
+
+.product-rank tr>:first-child{
+    width: 50px;
+    text-align: center;
+    padding-inline-start: unset;
+}
+
+.product-rank tr>:nth-child(2){
+    width: 400px;
+}
+
+.product-rank tr>:nth-child(3){
+    width: 120px;
+}
+
+.product-rank tr>:nth-child(4){
+    width: 120px;
+}
+.product-rank tr>:nth-child(5){
+    width: 120px;
+}
+
+.rank{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.order-list tr>:nth-child(1){
+    width: 310px;
+}
+.order-list tr>:nth-child(2){
+    width: 90px;
+}
+
+.order-list tr>:nth-child(3){
+    width: 110px;
+}
+.order-list tr>:nth-child(4){
+    width: 110px;
+}
+
+.order-list tr>:nth-child(6){
+    width: 100px;
+}
+
+.order-no:hover{
+    cursor: pointer;
+}
+
+.complete-send{
+    display: none;
+}
+
+/* 개인-상품구매내역 */
+.product-table{
+    width: 950px;
+}
+
+/* 개인 - 상품 판매 */
+.sale-table{
+    width: 950px;
+}
+
+
+/* 리뷰 작성 CSS */
+
+/* 주문 상품 영역 */
+.review-detail-title{
+    width: 800px;
+    margin: 0 auto 0 auto;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 11px;
+}
+.review-table{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.review-table tbody>tr>td{
+    height: 140px;
+}
+
+.review-table tbody>tr>:nth-child(2){
+    text-align: left;
+    padding-inline-start: 20px;
+}
+
+.review-table tr>:first-child{
+    width: 100px;
+}
+
+.product-img{
+    position: relative;
+    display: inline-block;
+}   
+
+.product-img img{
+    width: 80px;
+    height: auto;
+    vertical-align: middle;
+    }
+.product-info{
+    position: relative;
+    display: inline-block;
+ }
+
+
+/* 리뷰 작성 영역 */
+.reviewArea{
+    width: 875px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formArea{
+margin-left: -7px;
+
+}
+.review-title{
+    margin-top: 50px;
+    margin-bottom:20px;
+}
+
+.input-review-title {
+    width: 794px;
+    height: 30px;
+    border-radius: unset;
+    border: black solid 1px;
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btnArea {
+    text-align: center;
+ }
+
+#submitBtn>p {
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+.review-content{
+    
+    position: relative;
+}
+
+.reviewArea span{
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.review-content>span{
+    vertical-align: top;
+}
+
+.review-table tr{
+    border-bottom: black solid 1px;
+}
+
+textarea{
+    resize: none;
+    width: 788px;
+    min-height: 200px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+}
+
+
+
+/* 개인 판매 목록*/ 
+.user-product-list{
+    width:950px;
+
+}
+
+.user-product-list td:first-child{
+    text-align: center;
+    padding-inline-start: unset;
+}
+
+.pagination_r {
+	display: inline-block;
+    text-align: center;
+    padding-left: 43% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.pagination_r a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	background:none;
+	text-align:center;
+}

@@ -1,0 +1,241 @@
+/* 전체 기본 설정 */
+
+body{
+    /* 스크롤 바로 인해 body 영역이 밀리지 않도록 함 */
+    overflow: overlay;
+}
+
+ul {
+    padding-inline-start: 0px;
+    
+}
+
+.category li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+td,
+th {
+    padding: unset;
+}
+
+
+.container-myPage {
+    width: 1200px;
+    margin: 70px auto 200px auto;
+
+}
+
+
+
+/* 좌측 메뉴 설정 */
+.category-list {
+    float: left;
+    width: 150px;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.category-list ul{
+	margin-block-start : 1em;
+	margin-block-end: 1em;
+	font-size: 13px;
+}
+
+.category-list ul a{
+	background:none;
+	color:black;
+}
+
+
+/* 테이블 전체 메뉴 설정 */
+table {
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.menu-title {
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline 2px;
+    text-underline-offset: 5px;
+}
+
+
+
+/* 테이블 나오는 영역 */
+.warp-section {
+    position: relative;
+    display: inline-block;
+    margin-top: 0px;
+    margin-left: 10px;
+
+}
+
+.member-info tr {
+    line-height: 50px;
+    border-bottom: black solid 0.5px;
+
+}
+
+html.dark .member-info tr {
+	line-height: 50px;
+	border-bottom: gray solid 0.5px;
+}
+
+tr>:first-child {
+    width: 155px;
+    text-align: left;
+    padding-inline-start: 0px;
+}
+
+.member-info tr>:nth-child(2) {
+    width: 150px;
+    text-align: left;
+}
+
+.member-info tr>:nth-child(3) {
+    width: 500px;
+    text-align: left;
+}
+
+.member-info tr>:last-child {
+    width: 145px;
+    text-align: left;
+    
+}
+
+.member-info th {
+    border-bottom: black solid 2px;
+    font-size: 15px;
+    line-height: 50px;
+}
+
+html.dark .member-info th {
+    border-bottom: gray solid 2px;
+    font-size: 15px;
+    line-height: 50px;
+}
+
+.container-myPage button{
+    background: black;
+    border: black solid 0.5px;
+    width: 120px;
+    height: 35px;
+    color: white;
+    position: relative;
+    display: inline-block;
+    line-height: normal !important;
+}
+
+html.dark .container-myPage button{
+    background: grey;
+    border: grey solid 0.5px;
+    color: white;
+}
+
+.section-title {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.text-underline {
+    position: relative;
+    margin-inline-start: 0px;
+    width: 78px;
+}
+
+.body-title {
+    text-align: center;
+    margin: 30px 0 30px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.cancel-btn {
+    background-color: red;
+    border: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.update-password {
+    padding-inline-start: 0px;
+}
+
+.input>label {
+    display: inline-block;
+    width: 150px;
+}
+
+.container-myPage input {
+    height: 25px;
+    width: 300px;
+    line-height: 20px;
+    border-style: none;
+    border: black solid 1px;
+    padding-left: 5px;
+}
+
+input[type=submit] {
+    background: black;
+    border: none;
+    width: 120px;
+    height: 35px;
+    color: white;
+    position: relative;
+    display: inline-block;
+    margin-left: 153px;
+    margin-bottom: 20px;
+	line-height: normal ;
+}
+
+input[type=reset] {
+    background: lightgray;
+    border: none;
+    width: 120px;
+    height: 35px;
+    color: black;
+    position: relative;
+    display: inline-block;
+   	line-height: normal ;
+   	margin-left: 15px;
+}
+
+
+
+.select-bank {
+    width: 100px;
+    height: 25px;
+    border-radius: unset;
+}
+
+select {
+    position: relative;
+    display: inline-block;
+
+}
+.member-info{
+    border-top: black solid 2px;
+}
+
+.table-title{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 11px;
+    
+}
+
+
+
+
+
+
+
+
+
+

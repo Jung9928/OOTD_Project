@@ -1,0 +1,313 @@
+@CHARSET "UTF-8";
+
+
+.container-List {
+    width: 1200px;
+    height: auto;
+    margin: 70px auto 200px auto;
+  }
+
+nav {
+    float: left;
+  	
+}
+section{
+	display: inline-block;
+}
+
+.main-wrapper{
+	display: inline-block;
+}
+
+section {
+    margin-top: 20px;
+   
+}
+
+nav {
+    padding: 10px 10px;
+    width: 170px;
+}
+
+div[class$=cate]  {
+    text-align: center;
+}
+
+.cate {
+    color: gray;
+    font-size: larger;
+    margin-bottom: 5px;
+}
+
+#_title {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hiddenArea li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.showArea * .thumbnail-area * .cate:hover {
+    cursor: pointer;
+    color: black;
+}
+.category {
+    padding-left: -30px;
+}
+.dropArea {
+    height: auto;
+    display: none;
+}
+
+.hiddenArea {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.accordionTitle{
+    font-size: larger;
+}
+
+.bi-dash-lg {
+    display: none;
+}
+
+.filter-div {
+	padding-top: 5px;
+    color: gray;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    padding-inline-start: 10px;
+}
+
+.filter-text {
+	padding: 5px 5px;
+    color: gray;
+}
+
+
+.pagination, .filter-div span:hover {
+    cursor: pointer !important;
+    color: black;
+}
+
+
+#prod-li, #brand-li {
+    margin-left: -30px;
+
+}
+
+#prod-li, #brand-li:hover {
+	cursor: pointer !important;
+	color: black !important;
+}
+
+.prod, .brand{
+	font-size: 12pt;	
+}
+
+.filter-text{
+	font-size: 12pt;
+}
+
+.content-wrapper {
+    /* text-align: center; */
+/*     padding: 10px; */
+
+}
+
+.thumbnail-list {
+    display: inline-block;
+    margin: 10px;
+}
+
+.thumbnail-list:hover {
+	cursor: pointer;
+}
+
+.thumbnail-area {
+    position: relative;
+}
+
+.thumbnail-area img {
+    width: 200px;
+    height: 250px;
+}
+
+.thumbnail-area:hover img  {
+    opacity: 0.4;
+    transition: 0.2s;
+}
+
+.thumbnail-info {
+    position: absolute;
+    top: 40px;
+    /* left: 10px; */
+    display: none;
+   	padding : 0px 30px;
+    text-align: center;
+    font-size: 11pt;
+    font-weight: 550;
+}
+.thumbnail-list .p_attr:hover{
+	display: inline-block;
+}
+
+
+#topBtn {
+	width:50px;
+	height:50px;
+    position: fixed;
+    bottom:500px;
+ 	background: #636363;
+ 	color: white;
+ 	text-align:center;
+ 	font-size:14px;
+ 	font-weight: 600;
+    padding-top:10px;
+    z-index: 10;
+    top:90%;
+    left:90%;
+    cursor: pointer;
+}
+
+
+.list-title{
+	margin-top:30px;
+	margin-bottom: 30px;
+	
+}
+
+html.dark .thumbnail-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    color: white;
+}
+
+#prod-regis {
+ 	float: right;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid black;
+    color: black;
+    margin-right: 15px;
+}
+
+.product-list{
+	margin-bottom:30px;
+}
+
+#prod-regis:hover {
+    background: black;
+    color: white;
+    transition: 0.2s;
+}
+
+
+html.dark #prod-regis {
+    float: right;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    margin-right: 15px;
+}
+
+html.dark #prod-regis:hover {
+    background: white;
+    color: black;
+    transition: 0.2s;
+}
+
+
+
+html.dark .showArea:hover {
+	color: white;
+}
+
+html.dark .showArea {
+	color: gray;
+}
+
+.side-bar{
+	margin-top: 60px;
+}
+
+.pagination_r {
+	display: inline-block;
+    text-align: center;
+    padding-left: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.pagination_r a {
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	background:none;
+	text-align:center;
+}
+/* @media (prefers-color-scheme: dark) {
+    html.dark {
+        background: black;
+    }
+
+    html.dark header {
+        color: white;
+    }
+
+    html.dark .filter-div {
+        margin-left: 50px;
+        padding: 5px 5px;
+        color: gray;
+    }
+    
+    html.dark .filter-text {
+        padding: 10px 10px;
+        color: gray;
+    }
+    
+    html.dark .filter-text:hover {
+        cursor: pointer;
+        color: white;
+    }
+
+    html.dark .cate:hover {
+        cursor: pointer;
+        color: white;
+    }
+
+    html.dark .showArea b {
+        color: white;
+    }
+
+    html.dark svg {
+        color: white;
+    }
+
+    html.dark .pagination a{
+        color: white;
+    }
+
+    html.dark .thumbnail-area:hover img  {
+        opacity: 0.3;
+        transition: 0.2s;
+    }
+
+    html.dark .thumbnail-info {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: none;
+        color: white;
+    }
+    
+/* } */
+

@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+body {
+    width: 1200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav, section {
+    float: left;
+}
+
+section {
+    margin-top: 20px;
+    margin-left: -30px;
+}
+
+nav {
+    padding: 10px 10px;
+    width: 170px;
+}
+
+div[class$=cate]  {
+    text-align: center;
+}
+
+.cate {
+    color: gray;
+    font-size: larger;
+    margin-bottom: 5px;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.cate:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.category {
+    padding-left: -30px;
+}
+.dropArea {
+    height: auto;
+    display: none;
+}
+
+.hiddenArea {
+    margin-left: -30px;
+    margin-top: 10px;
+}
+
+.accordionTitle{
+    font-size: larger;
+}
+
+.bi-dash-lg {
+    display: none;
+}
+
+.filter-div {
+    margin-left: 50px;
+    padding: 5px 5px;
+    color: gray;
+}
+
+.filter-text {
+    padding: 8px 8px;
+    color: gray;
+    margin-left: 576px;
+}
+
+.filter-text:hover {
+    cursor: pointer;
+    color: black;
+}
+
+#prod-li, #brand-li {
+    margin-left: -30px;
+}
+.content-wrapper {
+    text-align: center;
+    padding: 10px;
+}
+
+.thumbnail-list {
+    display: inline-block;
+    margin: 10px;
+}
+
+.thumbnail-area {
+    position: relative;
+}
+
+.thumbnail-area img {
+    width: 200px;
+    height: 250px;
+}
+
+.thumbnail-area:hover img  {
+    opacity: 0.4;
+    transition: 0.2s;
+}
+
+.thumbnail-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+}
+
+.pagination {
+    display: inline-block;
+    text-align: center;
+}
+
+.pagination a {
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+}
+
+#prod-regis {
+    float: right;
+    border-radius: 5px;
+    background: grey;
+    color: white;
+    margin-right: 15px;
+}
+
+
+#topBtn {
+	width:50px;
+	height:50px;
+    position: fixed;
+    bottom:500px;
+ 	background: #636363;
+ 	color: white;
+ 	text-align:center;
+ 	font-size:14px;
+ 	font-weight: 600;
+    padding-top:10px;
+    z-index: 10;
+    top:90%;
+    left:90%;
+    cursor: pointer;
+}
+
+html.dark {
+    background: black;
+}
+
+html.dark header {
+    color: white;
+}
+
+html.dark .filter-div {
+    margin-left: 50px;
+    padding: 5px 5px;
+    color: gray;
+}
+
+html.dark .filter-text {
+    padding: 10px 10px;
+    color: gray;
+}
+
+html.dark .filter-text:hover {
+    cursor: pointer;
+    color: white;
+}
+
+html.dark .cate:hover {
+    cursor: pointer;
+    color: white;
+}
+
+html.dark .showArea b {
+    color: white;
+}
+
+html.dark svg {
+    color: white;
+}
+
+html.dark .pagination a{
+    color: white;
+}
+
+html.dark .thumbnail-area:hover img  {
+    opacity: 0.3;
+    transition: 0.2s;
+}
+
+html.dark .thumbnail-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    color: white;
+}
