@@ -1,1 +1,0 @@
-# OOTD_Project
