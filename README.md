@@ -83,38 +83,60 @@
 
 ### 구현 이미지
 -----
-| 1) 로그인 페이지             | 2) 회원 가입 페이지 |
+| 1) 메인 페이지(mouse hover 시)             | 2) 메인 페이지(mouse hover 시) |
 | ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117924188-4e655d00-b330-11eb-9823-85deb2a71c50.png"/> | <img src="https://user-images.githubusercontent.com/45419456/117924238-62a95a00-b330-11eb-9de2-0d8d0d93fec2.png"/>
+| ![image](https://user-images.githubusercontent.com/45419456/125302207-b226f900-e366-11eb-9d81-4fb6c43ca0cf.png) | ![image](https://user-images.githubusercontent.com/45419456/125302632-177aea00-e367-11eb-8530-38d306407e6e.png)
 
-| 3) 회원 정보 조회 페이지             | 4) 회원 정보 수정 및 탈퇴 페이지 |
+| 3) 회원 가입 (개인)             | 4) 회원 가입 (업체) |
 | ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117924725-1ca0c600-b331-11eb-81e6-0dd9c33f4a5e.png"/> | <img src="https://user-images.githubusercontent.com/45419456/117926616-00eaef00-b334-11eb-8deb-27dc50b7d212.png">
+| ![image](https://user-images.githubusercontent.com/45419456/125302267-c0751500-e366-11eb-95bb-35c8245a3e35.png) | ![image](https://user-images.githubusercontent.com/45419456/125302292-c5d25f80-e366-11eb-9ef5-12185ee6f7e1.png)
 
-| 5) 회원 승인 요청 페이지             | 6) 회원 권한 회수 페이지 |
-| ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117927677-7f945c00-b335-11eb-8e8f-db39a61d4393.png"> | <img src="https://user-images.githubusercontent.com/45419456/117924919-7acda900-b331-11eb-8452-7d8b8f766a07.png">
-
-| 7) 상품 등록 페이지             | 8) 상품 조회 페이지 |
-| ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117927966-e285f300-b335-11eb-824e-2af2af5cb022.png"> | <img src="https://user-images.githubusercontent.com/45419456/117928073-09442980-b336-11eb-891f-fb8bf4f04f3c.png">
-
-| 9) 판매 등록 페이지             | 10) 판매 조회/수정/삭제 페이지 |
-| ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117928367-6e981a80-b336-11eb-9eb2-9b5e89acfdd4.png"> | <img src="https://user-images.githubusercontent.com/45419456/117929885-48737a00-b338-11eb-8691-11233bfd0188.png">
-
-| 11) 발주 등록 페이지             | 12) 발주 조회/수정/삭제 페이지 |
-| ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117928586-bd45b480-b336-11eb-995f-6dd5bb9e8252.png"> | <img src="https://user-images.githubusercontent.com/45419456/117930073-85d80780-b338-11eb-8df6-4b85b88fa5e8.png">
-
-| 13) 거래처 등록 페이지             | 14) 거래처 조회 페이지 |          15) 거래처 수정/삭제 페이지|
+| 5) 로그인 모달             | 6) 아이디 찾기 모달 |           7) 비밀번호 찾기 모달 |
 | ------ | ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117928839-144b8980-b337-11eb-8731-2df649c60dc2.png"> | <img src="https://user-images.githubusercontent.com/45419456/117928920-31805800-b337-11eb-9fbe-0a49e67365e4.png"> | <img src="https://user-images.githubusercontent.com/45419456/117929499-de5ad500-b337-11eb-80a4-38438a0cb9b1.png">
+| ![image](https://user-images.githubusercontent.com/45419456/125302342-cf5bc780-e366-11eb-8233-cfa01be8a65f.png) | ![image](https://user-images.githubusercontent.com/45419456/125302377-d7b40280-e366-11eb-8a92-a31d3820ed1f.png)
+ | ![image](https://user-images.githubusercontent.com/45419456/125302398-dda9e380-e366-11eb-97f0-7a0e87ff5397.png)
 
-| 16) 재고조회/수정 페이지             | 17) 메인(월/일별 판매량 시각화) 페이지 |
+| 8) 마이 페이지             | 9) 회원 정보 수정 
 | ------ | ------ |
-| <img src="https://user-images.githubusercontent.com/45419456/117929266-90de6800-b337-11eb-92e2-ce4df8ae55db.png"> | <img src="https://user-images.githubusercontent.com/45419456/117929376-b3708100-b337-11eb-9d09-fe2c7b83fad3.png">
+| ![image](https://user-images.githubusercontent.com/45419456/125303391-bacbff00-e367-11eb-94e5-177563f6823c.png) | ![image](https://user-images.githubusercontent.com/45419456/125303449-c7505780-e367-11eb-8306-1c20230f57b4.png)
 
+| 10) 상품 리스트 (중고)             | 11) 상품 리스트 (브랜드) |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125303901-1e562c80-e368-11eb-9d96-e429f76e59ba.png) | !![image](https://user-images.githubusercontent.com/45419456/125303851-126a6a80-e368-11eb-8860-06c3ceb030f4.png)
+
+| 12) 상품 상세 페이지 (중고)             | 13) 상품 상세 페이지 (브랜드) |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125304162-4fcef800-e368-11eb-9af7-f7ea69c005aa.png) | ![image](https://user-images.githubusercontent.com/45419456/125304096-42b20900-e368-11eb-9267-50081f7b61f4.png)
+
+| 14) 회원 장바구니             | 15) 개인 구매 내역 |          
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125304789-d4217b00-e368-11eb-9355-1d148931ceec.png) | ![image](https://user-images.githubusercontent.com/45419456/125304829-dbe11f80-e368-11eb-8158-db5c744e4358.png)
+
+| 16) 판매 상품 관리 페이지 (중고)             | 17) 판매 상품 관리 페이지 (브랜드) |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125305051-07640a00-e369-11eb-96d2-bda17565b231.png) | ![image](https://user-images.githubusercontent.com/45419456/125305114-1480f900-e369-11eb-83f7-3a3fde4f9837.png)
+
+
+| 18) 상품 판매 순위 (브랜드)             | 19) 판매 & 주문받은 내역 (브랜드) |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125305317-3a0e0280-e369-11eb-9c48-c832e9571b14.png) | ![image](https://user-images.githubusercontent.com/45419456/125305375-42663d80-e369-11eb-9892-5e599bb28adf.png)
+
+
+| 20) 판매 내역 상세 조회 모달 (브랜드)             | 21) 판매 내역 (중고) |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125305851-ab4db580-e369-11eb-80e1-91d896a2ad38.png) | ![image](https://user-images.githubusercontent.com/45419456/125305895-b3a5f080-e369-11eb-9a65-f6f45b38cb4f.png)
+
+| 22) 상품 등록 (중고)            | 23) 상품 등록 (브랜드) |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125306122-e6e87f80-e369-11eb-88d6-1555b400bc99.png) | ![image](https://user-images.githubusercontent.com/45419456/125306077-da642700-e369-11eb-847a-9b880f44730c.png)
+
+| 24) 리뷰&FAQ 페이지          | 25) 리뷰 등록 페이지 |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125306242-0089c700-e36a-11eb-87ef-02477d57bfe8.png) | ![image](https://user-images.githubusercontent.com/45419456/125306280-08e20200-e36a-11eb-914c-14a9eb6fcdd5.png)
+
+| 26) 결제 페이지          | 27) 결제 완료 페이지 |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125306521-421a7200-e36a-11eb-8cfe-710c83c554a1.png) | ![image](https://user-images.githubusercontent.com/45419456/125306590-4f376100-e36a-11eb-8b28-24b25330113b.png)
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
