@@ -54,20 +54,14 @@
 
 ### 외부 라이브러리(Maven)
 -----
-| Library |
-| ------ |
-| json 20210307 | 
-| gson 2.8.6 |
-| commons-dbcp 1.4 | 
-| myBatis 3.5.6 |
-| mybatis-spring 2.0.6 |
-| ojdbc6 11.2.0.4 |
-| lombok 1.18.18 |
-| spring-security-core 5.3.6 RELEASE |
-| jackson-databind 2.11.4 |
-| commons-fileupload 1.4 |
-| javax.mail 1.5.6 |
-| httpclient 4.5.13 |
+| Library | ------ |
+| ------ | ------ |
+| json 20210307 | gson 2.8.6 |
+| commons-dbcp 1.4 | myBatis 3.5.6 |
+| mybatis-spring 2.0.6 | ojdbc6 11.2.0.4 |
+| lombok 1.18.18 | spring-security-core 5.3.6 RELEASE |
+| jackson-databind 2.11.4 | commons-fileupload 1.4 |
+| javax.mail 1.5.6 | httpclient 4.5.13 |
 
 ### ERD 설계
 -----
