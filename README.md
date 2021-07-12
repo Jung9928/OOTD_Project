@@ -72,6 +72,15 @@
 -----
 ![image](https://user-images.githubusercontent.com/45419456/125296574-64f45880-e361-11eb-9b60-e2cea9c822ef.png)
 
+### 시퀀스 다이어그램
+-----
+| 중고 상품 구매 시퀀스 다이어그램 | 브랜드 상품 구매 시퀀스 다이어그램 |
+| ------ | ------ |
+| ![image](https://user-images.githubusercontent.com/45419456/125301414-ef3ebb80-e365-11eb-9a30-f170b91395b5.png) | UI ![image](https://user-images.githubusercontent.com/45419456/125301461-f960ba00-e365-11eb-9fca-8ab61f8de000.png) |
+| 일반회원 중고상품 등록 시퀀스 다이어그램 | 브랜드회원 브랜드 상품 등록 시퀀스 다이어그램 |
+| ![image](https://user-images.githubusercontent.com/45419456/125301500-02518b80-e366-11eb-9bc5-719dcde07484.png) | ![image](https://user-images.githubusercontent.com/45419456/125301539-0aa9c680-e366-11eb-8bde-272c86846b45.png) |
+
+
 ### 구현 이미지
 -----
 | 1) 로그인 페이지             | 2) 회원 가입 페이지 |
