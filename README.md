@@ -54,7 +54,7 @@
 
 ### 외부 라이브러리(Maven)
 -----
-| Library | ------ |
+| Library |  |
 | ------ | ------ |
 | json 20210307 | gson 2.8.6 |
 | commons-dbcp 1.4 | myBatis 3.5.6 |
