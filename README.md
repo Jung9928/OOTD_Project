@@ -137,7 +137,7 @@
 | ------ | ------ |
 | ![image](https://user-images.githubusercontent.com/45419456/125306521-421a7200-e36a-11eb-8cfe-710c83c554a1.png) | ![image](https://user-images.githubusercontent.com/45419456/125306590-4f376100-e36a-11eb-8b28-24b25330113b.png)
 
-| 26) 다크모드 전환          
+| 28) 다크모드 전환          
 | ------ |
 | ![image](https://user-images.githubusercontent.com/45419456/125307446-0502af80-e36b-11eb-86d9-03412de280eb.png) | 
 
