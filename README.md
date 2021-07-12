@@ -77,7 +77,7 @@
 | 중고 상품 구매 시퀀스 다이어그램 | 브랜드 상품 구매 시퀀스 다이어그램 |
 | ------ | ------ |
 | ![image](https://user-images.githubusercontent.com/45419456/125301414-ef3ebb80-e365-11eb-9a30-f170b91395b5.png) | ![image](https://user-images.githubusercontent.com/45419456/125301461-f960ba00-e365-11eb-9fca-8ab61f8de000.png) |
-| 일반회원 중고상품 등록 시퀀스 다이어그램 | 브랜드회원 브랜드 상품 등록 시퀀스 다이어그램 |
+| 중고상품 등록 시퀀스 다이어그램(일반 회원) | 브랜드 상품 등록 시퀀스 다이어그램(브랜드 회원) |
 | ![image](https://user-images.githubusercontent.com/45419456/125301500-02518b80-e366-11eb-9bc5-719dcde07484.png) | ![image](https://user-images.githubusercontent.com/45419456/125301539-0aa9c680-e366-11eb-8bde-272c86846b45.png) |
 
 
@@ -87,14 +87,13 @@
 | ------ | ------ |
 | ![image](https://user-images.githubusercontent.com/45419456/125302207-b226f900-e366-11eb-9d81-4fb6c43ca0cf.png) | ![image](https://user-images.githubusercontent.com/45419456/125302632-177aea00-e367-11eb-8530-38d306407e6e.png)
 
-| 3) 회원 가입 (개인)             | 4) 회원 가입 (업체) |
+| 3) 회원 가입 (개인)                        | 4) 회원 가입 (업체) |
 | ------ | ------ |
 | ![image](https://user-images.githubusercontent.com/45419456/125302267-c0751500-e366-11eb-95bb-35c8245a3e35.png) | ![image](https://user-images.githubusercontent.com/45419456/125302292-c5d25f80-e366-11eb-9ef5-12185ee6f7e1.png)
 
 | 5) 로그인 모달             | 6) 아이디 찾기 모달 |           7) 비밀번호 찾기 모달 |
 | ------ | ------ | ------ |
-| ![image](https://user-images.githubusercontent.com/45419456/125302342-cf5bc780-e366-11eb-8233-cfa01be8a65f.png) | ![image](https://user-images.githubusercontent.com/45419456/125302377-d7b40280-e366-11eb-8a92-a31d3820ed1f.png)
- | ![image](https://user-images.githubusercontent.com/45419456/125302398-dda9e380-e366-11eb-97f0-7a0e87ff5397.png)
+| ![image](https://user-images.githubusercontent.com/45419456/125302342-cf5bc780-e366-11eb-8233-cfa01be8a65f.png) | ![image](https://user-images.githubusercontent.com/45419456/125302377-d7b40280-e366-11eb-8a92-a31d3820ed1f.png) | ![image](https://user-images.githubusercontent.com/45419456/125302398-dda9e380-e366-11eb-97f0-7a0e87ff5397.png)
 
 | 8) 마이 페이지             | 9) 회원 정보 수정 
 | ------ | ------ |
