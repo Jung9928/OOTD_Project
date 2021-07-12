@@ -62,6 +62,7 @@
 | lombok 1.18.18 | spring-security-core 5.3.6 RELEASE |
 | jackson-databind 2.11.4 | commons-fileupload 1.4 |
 | javax.mail 1.5.6 | httpclient 4.5.13 |
+| jstl-1.2jar |
 
 ### ERD 설계
 -----
@@ -139,4 +140,9 @@
 
 | 28) 다크모드 전환          
 | ------ |
-| ![image](https://user-images.githubusercontent.com/45419456/125307446-0502af80-e36b-11eb-86d9-03412de280eb.png) | 
+| ![image](https://user-images.githubusercontent.com/45419456/125307446-0502af80-e36b-11eb-86d9-03412de280eb.png) |
+
+
+
+
+
